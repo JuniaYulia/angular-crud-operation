@@ -1,0 +1,32 @@
+<form [formGroup]="loginPage" (ngSubmit)="onSubmit(loginPage.value)">
+    <div class="form-group">
+        <table align="center">
+            <tr>
+                <td>
+                    <label style="margin-right:10px;" for="email">Email</label>
+                </td>
+                <td>
+                    <input type="email" placeholder="name@provider.com" id="email" name="email" class="form-control" formControlName="email">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <label style="margin-right:10px;" for="">Password</label>
+                </td>
+                <td>
+                    <input type="password" id="password" name="password" class="form-control" formControlName="password">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td></td>
+                <button type="submit" class="btn btn-primary btn-sm btn-block">LOGIN</button>
+            </tr>
+        </table>
+        <br>
+        <div *ngIf="invalidLogin" class="alert alert-danger">
+            <p>Invaild username or password!</p>
+        </div>
+    </div>
+</form>
